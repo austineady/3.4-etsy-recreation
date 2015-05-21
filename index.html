@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Almost Etsy</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header>
+  <div class="logobox">
+    <span class="logoaddition">Almost</span>
+    <img src="assets/logo.png" class="logo">
+  </div>
+  <form class="searchtext">
+    <div class="searchbutton">Search</div>
+  </form>
+  <div class="browsebutton">Browse</div>
+  <div class="register">Register</div>
+  <div class="signin">Sign In</div>
+  <div class="cartandicon">Cart</div>
+</header>
+<section class="content">
+  <section class="sidecontainer">
+    <h5 class="showresults">Show result for:</h5>
+    <div class="categorylistbox">
+      <ul class="categorylist">
+        <li class="categoryname head">All Categories</li>
+        <li class="categoryname title">Home and Living</li>
+        <li class="categoryname title">Art and Collections</li>
+        <li class="categoryname title">Weddings</li>
+        <li class="categoryname title">Clothing</li>
+        <li class="categoryname title">Jewelry</li>
+        <li class="categoryname title">Paper and Party Supplies</li>
+        <li class="categoryname title">Accessories</li>
+        <li class="categoryname title">Craft Supplies and Tools</li>
+        <li class="categoryname title">Bags and Purses</li>
+        <li class="categoryname title">Bath and Beauty</li>
+        <li class="categoryname title">Shoes</li>
+        <li class="categoryname title">Books,Movies, and Music</li>
+        <li class="categoryname title">Electronics and Accessories</li>
+        <li class="categoryname title">Toys and Games</li>
+        <li class="categoryname title">Pet Supplies</li>
+      </ul>
+    </div>
+  </section>
+  <section class="middlecontainer">
+
+  </section>
+
+
+
+</section>
+<script id="result-template" type="text/x-handlebars-template">
+  <div class="resultbox">
+    <div id="itemimage">
+      <img src="{{{inputimage}}}" height = "172px" class="placeholder">
+    </div>
+    <div id="iteminfotitle">{{{inputtitle}}}</div>
+    <div id="itemsellertitle">{{{inputseller}}}</div>
+    <div id="itemprice">{{{inputprice}}}<span class="currency">USD</span></div>
+</script>
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

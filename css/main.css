@@ -1,0 +1,216 @@
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f5f5f1;
+  margin: 0; }
+  body::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+  height: 80px; }
+  header:last-child {
+    margin-right: 0; }
+
+.logobox {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 6.17215%;
+  margin-left: 6.82384%;
+  margin-top: 10px;
+  color: #f35c07;
+  font-size: 16px; }
+  .logobox:last-child {
+    margin-right: 0; }
+
+form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 18.96686%;
+  height: 38px;
+  border-radius: 3px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20px; }
+  form:last-child {
+    margin-right: 0; }
+
+.searchbutton {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  float: right;
+  background-color: #32a2bd;
+  height: 38px;
+  color: white;
+  text-align: center;
+  line-height: 38px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+  .searchbutton:last-child {
+    margin-right: 0; }
+
+.browsebutton {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 5.31917%;
+  border: 1px solid silver;
+  height: 35px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 3px;
+  margin-top: 21px; }
+  .browsebutton:last-child {
+    margin-right: 0; }
+
+.register {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 6.17215%;
+  margin-left: 34.11922%;
+  margin-top: 30px;
+  color: #0192b9; }
+  .register:last-child {
+    margin-right: 0; }
+
+.signin {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 4.46619%;
+  height: 38px;
+  border: 1px solid #0192b9;
+  border-radius: 3px;
+  color: #0192b9;
+  text-align: center;
+  line-height: 38px;
+  margin-top: 20px; }
+  .signin:last-child {
+    margin-right: 0; }
+
+.cartandicon {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 2.76023%;
+  height: 50px;
+  border: 1px solid grey;
+  text-align: center;
+  margin-top: 13px; }
+  .cartandicon:last-child {
+    margin-right: 0; }
+
+.sidecontainer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 17.2609%;
+  margin-left: 17.05961%;
+  height: auto;
+  margin-top: 10px; }
+  .sidecontainer:last-child {
+    margin-right: 0; }
+
+.middlecontainer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 57.35098%;
+  height: 1000px;
+  margin-top: 30px; }
+  .middlecontainer:last-child {
+    margin-right: 0; }
+
+.categorylistbox {
+  background-color: white;
+  border: 1px solid #e1e3df;
+  border-radius: 3px; }
+
+li {
+  list-style: none; }
+
+.categoryname {
+  color: #0192b9;
+  margin-left: -20px;
+  font-size: 15px; }
+
+.head {
+  color: black;
+  margin-left: -25px; }
+
+.resultbox {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 30.0556%;
+  float: left;
+  margin-top: 20px;
+  height: 221px;
+  border: 1px solid #e1e3df;
+  border-radius: 3px;
+  background-color: white; }
+  .resultbox:last-child {
+    margin-right: 0; }
+  .resultbox:nth-child(0) {
+    margin-right: 0; }
+
+.resultbox:hover {
+  border: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.8); }
+
+.placeholder {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .placeholder:last-child {
+    margin-right: 0; }
+
+#iteminfotitle {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 91.4702%;
+  margin-left: 5px;
+  font-size: 15px;
+  height: 20px;
+  overflow: hidden; }
+  #iteminfotitle:last-child {
+    margin-right: 0; }
+
+#itemsellertitle {
+  margin-left: 5px;
+  margin-top: 10px;
+  float: left;
+  font-size: 14px;
+  color: #b2bed1; }
+
+#itemprice {
+  margin-right: 5px;
+  margin-top: 10px;
+  float: right;
+  font-size: 14px;
+  color: #78c042; }
