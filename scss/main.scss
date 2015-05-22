@@ -1,6 +1,10 @@
 @import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
+/* * {
+  border: 1px solid red;
+} */
+
 html {
   font-size: 62.5%;
 }
@@ -9,6 +13,7 @@ body {
   @include outer-container(1500px);
   background-color: rgba(245, 245, 241, 1);
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 header {
@@ -16,6 +21,10 @@ header {
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 2px 7px rgba(0, 0, 0, .5);
   height: 80px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .logobox {
@@ -27,44 +36,86 @@ header {
 }
 
 form {
-  @include span-columns(2.5);
+  @include span-columns(3.7);
   height: 38px;
   border-radius: 3px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
   margin-top: 20px;
 }
 
+.searchinput {
+  @include span-columns(8.7);
+  @include omega();
+  margin-top: 1px;
+  margin-left: 1px;
+  font-size: 15px;
+  height: 36px;
+  padding: 6px 10px;
+  border: 0;
+}
+
+.searchinput:focus {
+  outline: none;
+  border: 1px solid rgba(52, 168, 196, 1);
+}
+
 .searchbutton {
-  @include span-columns(3);
+  @include span-columns(3.54);
+  @include omega();
   float: right;
   background-color: rgba(50, 162, 189, 1);
-  height: 38px;
+  height: 37px;
   color: white;
   text-align: center;
-  line-height: 38px;
+  line-height: 37px;
+  border: 2px solid rgba(46, 151, 177, 1);
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 0 -1px rgba(64, 158, 181, 1);
+}
+
+.searchbutton:hover {
+  background-color: rgba(69, 173, 197, 1);
 }
 
 .browsebutton {
-  @include span-columns(.9);
-  border: 1px solid silver;
+  @include span-columns(1.1);
+  border: 1px solid rgba(102, 102, 102, .3);
   height: 35px;
   text-align: center;
-  line-height: 38px;
+  line-height: 35px;
   border-radius: 3px;
   margin-top: 21px;
+  font-size: 15px;
+  color: rgba(102, 102, 102, 1);
+}
+
+.browsebutton:hover {
+  border: 1px solid rgba(102, 102, 102, .8);
+}
+
+.fa-caret-down {
+  color: rgba(102, 102, 102, 1);
+  font-size: 15px;
+  margin-left: 5px;
 }
 
 .register {
   @include span-columns(1);
-  @include shift(4);
+  @include shift(2);
   margin-top: 30px;
   color: rgba(1, 146, 185, 1);
+  font-size: 15px;
+}
+
+.register:hover {
+  text-decoration: underline;
 }
 
 .signin {
-  @include span-columns(.8);
+  @include span-columns(.9);
   height: 38px;
   border: 1px solid rgba(1, 146, 185, 1);
   border-radius: 3px;
@@ -72,27 +123,53 @@ form {
   text-align: center;
   line-height: 38px;
   margin-top: 20px;
+  font-size: 13px;
+}
+
+.signin:hover {
+  background-color: rgba(240, 251, 253, 1);
 }
 
 .cartandicon {
-  @include span-columns(.6);
+  @include span-columns(.7);
   height: 50px;
-  border: 1px solid grey;
+  border-left: 1px solid rgba(102, 102, 102, .3);
   text-align: center;
   margin-top: 13px;
+  font-size: 13px;
+  color: rgba(102, 102, 102, .7);
+}
+
+.fa-shopping-cart {
+  font-size: 25px;
+  margin-bottom: 7px;
 }
 
 .sidecontainer {
   @include span-columns(2.3);
   @include shift(2);
   height: auto;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+.showresults {
+  font-size: 15px;
 }
 
 .middlecontainer {
   @include span-columns(7);
   height: 1000px;
   margin-top: 30px;
+}
+
+.currentcategory {
+  color: rgba(1, 146, 194, 1);
+}
+
+.fa-chevron-right {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: black;
 }
 
 .categorylistbox {
@@ -107,8 +184,16 @@ li {
 
 .categoryname {
   color: rgba(1, 146, 185, 1);
-  margin-left: -20px;
+  margin-left: 5px;
   font-size: 15px;
+}
+
+.categorylink {
+  color: rgba(1, 146, 194, 1);
+}
+
+.categorylink:hover {
+  text-decoration: underline;
 }
 
 .head {
@@ -116,11 +201,154 @@ li {
   margin-left: -25px;
 }
 
+.refineyoursearch {
+  font-size: 15px;
+}
+
+.refinebox {
+  @include span-columns (12);
+  background-color: rgba(255, 255, 255, 1);
+  height: 380px;
+  border-radius: 3px;
+  border: 1px solid rgba(225, 227, 223, 1);
+}
+
+.radiobox {
+  @include span-columns(10);
+  @include shift(1);
+  height: 150px;
+  border-bottom: 1px solid silver;
+}
+
+.clearcontext {
+  @include span-columns(12);
+  height: 80px;
+}
+
+.radio {
+  border-radius: 50%;
+  border-color: rgba(206, 207, 204, 1);
+  background: rgba(52, 168, 196, 1);
+  margin-right: 10px;
+}
+
+.radiolabel {
+  margin-top: 0;
+  font-size: 13px;
+}
+
+.pricebox {
+  @include span-columns(10);
+  @include shift(1);
+  height: 100px;
+  border-bottom: 1px solid silver;
+}
+
+.combineto {
+  @include span-columns(1);
+}
+
+.priceinputbox {
+  @include span-columns(12);
+  height: 38px;
+}
+
+.pricetextbox {
+  @include span-columns(4);
+  height: 38px;
+  line-height: 38px;
+  outline: none;
+  font-size: 13px;
+  color: rgba(169, 169, 169, 1);
+}
+
+.pricetextbox:focus {
+  border: 1px solid rgba(52, 168, 196, 1);
+}
+
+.carotbox {
+  @include span-columns(3);
+  border: 1px solid silver;
+  height: 38px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.carotbox:hover {
+  background-color: rgba(245, 245, 241, 1);
+}
+
+.fa-caret-right {
+  line-height: 38px;
+  font-size: 25px;
+  color: rgba(85, 85, 85, 1);
+}
+
+.colorfilter {
+  @include span-columns(10);
+  @include shift(1);
+  height: 52;
+  padding-bottom: 18px;
+  border-bottom: 1px solid silver;
+}
+
+.filtertext {
+  @include span-columns(12);
+  font-size: 13px;
+  height: auto;
+}
+
+.colorboxcontainer {
+  @include span-columns(12);
+  height: 27px;
+}
+
+.colorbox {
+  @include span-columns(1.6);
+  @include omega();
+  height: 22px;
+  border-radius: 3px;
+  border: 1px solid rgba(226, 226, 226, 1);
+  margin-left: 1px;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.lightblue {
+  background-color: rgba(12, 204, 243, 1);
+}
+
+.purple {
+  background-color: purple;
+}
+
+.black {
+  background-color: black;
+}
+
+.white {
+  background-color: white;
+}
+
 .resultbox {
-  @include span-columns(3.8, inline-block);
+  @include span-columns(3.5, inline-block);
   @include omega(0);
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
   height: 221px;
   border: 1px solid rgba(225, 227, 223, 1);
   border-radius: 3px;
@@ -136,12 +364,31 @@ li {
   @include span-columns(12);
 }
 
+.link {
+  text-decoration: none;
+  color: rgba(178, 190, 209, 1);
+}
+
+.itemlink {
+  color: black;
+}
+
+.itemlink:hover {
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 #iteminfotitle {
   @include span-columns(11);
   margin-left: 5px;
   font-size: 15px;
   height: 20px;
   overflow: hidden;
+  text-decoration: none;
+  color: black;
 }
 
 #itemsellertitle {

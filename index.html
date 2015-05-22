@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Almost Etsy</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -12,12 +13,13 @@
     <img src="assets/logo.png" class="logo">
   </div>
   <form class="searchtext">
+    <input type="text" class ="searchinput">
     <div class="searchbutton">Search</div>
   </form>
-  <div class="browsebutton">Browse</div>
+  <div class="browsebutton">Browse<i class="fa fa-caret-down"></i></div>
   <div class="register">Register</div>
   <div class="signin">Sign In</div>
-  <div class="cartandicon">Cart</div>
+  <div class="cartandicon"><i class="fa fa-shopping-cart"></i>Cart</div>
 </header>
 <section class="content">
   <section class="sidecontainer">
@@ -25,25 +27,47 @@
     <div class="categorylistbox">
       <ul class="categorylist">
         <li class="categoryname head">All Categories</li>
-        <li class="categoryname title">Home and Living</li>
-        <li class="categoryname title">Art and Collections</li>
-        <li class="categoryname title">Weddings</li>
-        <li class="categoryname title">Clothing</li>
-        <li class="categoryname title">Jewelry</li>
-        <li class="categoryname title">Paper and Party Supplies</li>
-        <li class="categoryname title">Accessories</li>
-        <li class="categoryname title">Craft Supplies and Tools</li>
-        <li class="categoryname title">Bags and Purses</li>
-        <li class="categoryname title">Bath and Beauty</li>
-        <li class="categoryname title">Shoes</li>
-        <li class="categoryname title">Books,Movies, and Music</li>
-        <li class="categoryname title">Electronics and Accessories</li>
-        <li class="categoryname title">Toys and Games</li>
-        <li class="categoryname title">Pet Supplies</li>
+
       </ul>
     </div>
+    <h5 class="refineyoursearch">Refine your search:</h5>
+    <section class="refinebox">
+      <div class="radiobox">
+        <h3 class="radiolabelhead">Item Type</h3>
+        <div class="clearcontext">
+          <h4 class="radiolabel"><input type="radio" value="All Items" class="itemtype">All Items</h4>
+          <h4 class="radiolabel"><input type="radio" value="Handmade" class="itemtype">Handmade</h4>
+          <h4 class="radiolabel"><input type="radio" value="Vintage" class="itemtype">Vintage</h4>
+        </div>
+      </div>
+      <div class="pricebox">
+        <h3 class="pricehead">Price</h3>
+        <div class="priceinputbox">
+          <input type="text" class="pricetextbox" value="Low">
+          <h3 class="combineto">to</h3>
+          <input type="text" class="pricetextbox" value="High">
+          <div class="carotbox"><i class="fa fa-caret-right"></i></div>
+        </div>
+      </div>
+      <div class="colorfilter">
+        <h3 class="filtertext">Filter By Color</h3>
+        <div class="colorboxcontainer">
+          <div class="colorbox red"></div>
+          <div class="colorbox orange"></div>
+          <div class="colorbox yellow"></div>
+          <div class="colorbox green"></div>
+          <div class="colorbox lightblue"></div>
+          <div class="colorbox purple"></div>
+          <div class="colorbox black"></div>
+          <div class="colorbox white"></div>
+        </div>
+      </div>
+    </section>
   </section>
   <section class="middlecontainer">
+  <div class="sortbar">
+    <h3 class="currentcategory">All Categories<i class="fa fa-chevron-right"></i>"tacos"<span class="resultsnum"></span></h3>
+  </div>
 
   </section>
 
@@ -53,11 +77,14 @@
 <script id="result-template" type="text/x-handlebars-template">
   <div class="resultbox">
     <div id="itemimage">
-      <img src="{{{inputimage}}}" height = "172px" class="placeholder">
+      <a href="{{inputitemsite}}" class="itemlink"><img src="{{{inputimage}}}" height = "172px" class="placeholder">
     </div>
-    <div id="iteminfotitle">{{{inputtitle}}}</div>
-    <div id="itemsellertitle">{{{inputseller}}}</div>
+    <div id="iteminfotitle"><a href="{{inputitemsite}}" class="itemlink">{{{inputtitle}}}</div>
+    <div id="itemsellertitle"><a href="{{inputsite}}" class="link">{{{inputseller}}}</div>
     <div id="itemprice">{{{inputprice}}}<span class="currency">USD</span></div>
+</script>
+<script id="category-template" type="text/x-handlebars-template">
+    <li class="categoryname"><a href="https://www.etsy.com/search/{{categoryname}}?q=skyrim" class="categorylink">{{categoryname}}</a></li>
 </script>
 <script src="bower_components/handlebars/handlebars.js"></script>
 <script src="main.js"></script>
