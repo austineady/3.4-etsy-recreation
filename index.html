@@ -12,10 +12,10 @@
     <span class="logoaddition">Almost</span>
     <img src="assets/logo.png" class="logo">
   </div>
-  <form class="searchtext">
-    <input type="text" class ="searchinput">
+  <div class="searchform">
+    <input type="text" id="userinput" class ="searchinput" value="">
     <div class="searchbutton">Search</div>
-  </form>
+  </div>
   <div class="browsebutton">Browse<i class="fa fa-caret-down"></i></div>
   <div class="register">Register</div>
   <div class="signin">Sign In</div>
@@ -25,8 +25,9 @@
   <section class="sidecontainer">
     <h5 class="showresults">Show result for:</h5>
     <div class="categorylistbox">
+      <li class="categoryname head">All Categories</li>
       <ul class="categorylist">
-        <li class="categoryname head">All Categories</li>
+
 
       </ul>
     </div>
@@ -67,6 +68,7 @@
   <section class="middlecontainer">
   <div class="sortbar">
     <h3 class="currentcategory">All Categories<i class="fa fa-chevron-right"></i>"tacos"<span class="resultsnum"></span></h3>
+    <div class="listings"></div>
   </div>
 
   </section>
@@ -81,10 +83,10 @@
     </div>
     <div id="iteminfotitle"><a href="{{inputitemsite}}" class="itemlink">{{{inputtitle}}}</div>
     <div id="itemsellertitle"><a href="{{inputsite}}" class="link">{{{inputseller}}}</div>
-    <div id="itemprice">{{{inputprice}}}<span class="currency">USD</span></div>
+    <div id="itemprice"><span class="dollar">$</span>{{{inputprice}}}<span class="currency">USD</span></div>
 </script>
 <script id="category-template" type="text/x-handlebars-template">
-    <li class="categoryname"><a href="https://www.etsy.com/search/{{categoryname}}?q=skyrim" class="categorylink">{{categoryname}}</a></li>
+    <li class="categoryname"><a href="https://www.etsy.com/search/{{categoryname}}?q={{userinputword}}" class="categorylink">{{categoryname}}</a></li>
 </script>
 <script src="bower_components/handlebars/handlebars.js"></script>
 <script src="main.js"></script>

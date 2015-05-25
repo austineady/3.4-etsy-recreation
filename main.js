@@ -4,11 +4,17 @@ to fetch data from Etsy's API. You call the
 function with the API URL as well as a callback
 function that will receive the response.
 */
-
+var userInput = document.getElementById('userinput').value;
 var url = "https://api.etsy.com/v2/listings/active.js?api_key=kz94tq0fg2i6mkj1gk0g2glg&keywords=skyrim&includes=Images,Shop";
 fetchJSONP(url, currentArrayItem);
-
 var combinedArrays = [];
+
+function clickSearch(event) {
+  var userInput = document.getElementById('userinput').value;
+  url = "https://api.etsy.com/v2/listings/active.js?api_key=kz94tq0fg2i6mkj1gk0g2glg&keywords="+userInput+"&includes=Images,Shop";
+  fetchJSONP(url, currentArrayItem);
+  changeCategory(userInput);
+}
 
 function fetchJSONP(url, callback) {
     var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
@@ -25,6 +31,8 @@ function fetchJSONP(url, callback) {
 }
 
 function currentArrayItem(data) {
+document.querySelector('.listings').innerHTML = "";
+document.querySelector('.categorylist').innerHTML = "";
   for(var i = 0; i < data.results.length; i++) {
     var item = data.results[i];
     var category = data.results[i].category_path;
@@ -35,7 +43,7 @@ function currentArrayItem(data) {
 
 function determineCategories(array) {
   combinedArrays.forEach(function(value, index) {
-    combinedArrays.shift()
+    combinedArrays.shift();
   })
 }
 
@@ -47,6 +55,32 @@ function combineArrays(category) {
     }
   })
 }
+
+function sortByFrequencyAndRemoveDuplicates(category) {
+  var frequency = {}, value;
+
+  for(var i = 0; i < category.length; i++) {
+    value = category[i];
+    if(value in frequency) {
+      frequency[value]++;
+    } else {
+      frequency[value] = 1;
+    }
+  }
+
+  var uniques = [];
+  for(value in frequency) {
+    uniques.push(value);
+  }
+
+  function compareFrequency(a, b) {
+    return frequency[b] - frequency[a];
+  }
+
+  return uniques.sort(compareFrequency);
+  console.log(sortByFrequencyAndRemoveDuplicates(category));
+}
+
 
 function changeVariables(item) {
   var image = item.Images[0].url_170x135;
@@ -66,8 +100,8 @@ function changeVariables(item) {
   logResults(context);
 }
 
-function changeCategory(value) {
-  var categoryValue = {categoryname: value};
+function changeCategory(value, userInput) {
+  var categoryValue = {categoryname: value, userinputword: userInput};
   displayCategories(categoryValue);
 }
 
@@ -76,7 +110,7 @@ function logResults(context) {
   var template = Handlebars.compile(source);
   var output = template(context);
   var templateHtml = template({});
-  var findDiv = document.querySelector('.sortbar');
+  var findDiv = document.querySelector('.listings');
   findDiv.insertAdjacentHTML("beforeend", output);
 }
 
@@ -84,9 +118,12 @@ function displayCategories(categoryValue) {
   var source = document.querySelector("#category-template").innerHTML;
   var template = Handlebars.compile(source);
   var output = template(categoryValue);
-  var findDisplayLi = document.querySelector('.head');
+  var findDisplayLi = document.querySelector('.categorylist');
   findDisplayLi.insertAdjacentHTML("beforeend", output);
 }
+
+document.querySelector('.searchbutton').addEventListener('click', clickSearch);
+
 
 /*Then you can call the function like this,
 where you would replace logResults with the

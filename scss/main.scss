@@ -35,7 +35,7 @@ a {
   font-size: 16px;
 }
 
-form {
+.searchform {
   @include span-columns(3.7);
   height: 38px;
   border-radius: 3px;
@@ -78,6 +78,10 @@ form {
 
 .searchbutton:hover {
   background-color: rgba(69, 173, 197, 1);
+}
+
+.searchbutton:active {
+  font-size: 13px;
 }
 
 .browsebutton {
@@ -184,7 +188,6 @@ li {
 
 .categoryname {
   color: rgba(1, 146, 185, 1);
-  margin-left: 5px;
   font-size: 15px;
 }
 
@@ -197,8 +200,8 @@ li {
 }
 
 .head {
+  margin-left: 5px;
   color: black;
-  margin-left: -25px;
 }
 
 .refineyoursearch {
@@ -345,7 +348,7 @@ li {
 }
 
 .resultbox {
-  @include span-columns(3.5, inline-block);
+  @include span-columns(3.7, inline-block);
   @include omega(0);
   float: left;
   margin-top: 10px;
@@ -388,7 +391,7 @@ li {
   height: 20px;
   overflow: hidden;
   text-decoration: none;
-  color: black;
+  color: rgba(85, 85, 85, 1);
 }
 
 #itemsellertitle {
@@ -403,6 +406,6 @@ li {
   margin-right: 5px;
   margin-top: 10px;
   float: right;
-  font-size: 14px;
+  font-size: 13px;
   color: rgba(120, 192, 66, 1);
 }

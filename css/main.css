@@ -50,7 +50,7 @@ a {
   .logobox:last-child {
     margin-right: 0; }
 
-form {
+.searchform {
   float: left;
   display: block;
   margin-right: 2.35765%;
@@ -59,7 +59,7 @@ form {
   border-radius: 3px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   margin-top: 20px; }
-  form:last-child {
+  .searchform:last-child {
     margin-right: 0; }
 
 .searchinput {
@@ -104,6 +104,9 @@ form {
 
 .searchbutton:hover {
   background-color: #45adc5; }
+
+.searchbutton:active {
+  font-size: 13px; }
 
 .browsebutton {
   float: left;
@@ -223,7 +226,6 @@ li {
 
 .categoryname {
   color: #0192b9;
-  margin-left: 5px;
   font-size: 15px; }
 
 .categorylink {
@@ -233,8 +235,8 @@ li {
   text-decoration: underline; }
 
 .head {
-  color: black;
-  margin-left: -25px; }
+  margin-left: 5px;
+  color: black; }
 
 .refineyoursearch {
   font-size: 15px; }
@@ -417,7 +419,7 @@ li {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 27.49666%;
+  width: 29.20262%;
   float: left;
   margin-top: 10px;
   height: 221px;
@@ -464,7 +466,7 @@ li {
   height: 20px;
   overflow: hidden;
   text-decoration: none;
-  color: black; }
+  color: #555555; }
   #iteminfotitle:last-child {
     margin-right: 0; }
 
@@ -479,5 +481,5 @@ li {
   margin-right: 5px;
   margin-top: 10px;
   float: right;
-  font-size: 14px;
+  font-size: 13px;
   color: #78c042; }
